@@ -1,0 +1,302 @@
+@import "reset.css";
+/* import google font */
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+@import url("prettyselect.css");
+:root {
+  /* set variables */
+  --light: #fff;
+  --dark: #000;
+  --borders: #f0af1f;
+  --other: #ecd9ae;
+
+  /* fallback for browsers that don't support variables */
+  color: #000;
+  color: var(--dark);
+  background-color: #fff;
+  background-color: var(--other);
+  font-family: "Krona One", sans-serif;
+}
+/****************************************
+Page Section Containers
+*****************************************/
+/* The body element */
+body {
+  display: flex; /* This element is a container */
+  flex-flow: column nowrap; /* This element is now a column and does not wrap */
+  font-size: 100%;
+  background-image: linear-gradient(transparent, var(--borders));
+
+  min-width: 100vw; /* Make the body 100% of the height of the view port */
+  min-height: 100vh; /* Make the body 100% of the width of the view port */
+}
+
+/** The header element **/
+header {
+  display: flex; /* This element is a container */
+  flex-flow: row nowrap; /* This element is now a row and does not wrap */
+  justify-content: space-between; /* Put space around the elements in the container */
+  align-items: center; /* Align items to the center of the secondary axis of the container */
+  margin: 1em;
+  padding: 0.2em;
+  border-radius: 0.5em; /*rounded corners*/
+  border: 0.3em solid var(--borders);
+  background-color: #000; /* In case browser does not support variables */
+  background-color: var(--dark);
+}
+
+/* The main element */
+main {
+  display: flex; /* This element is a container */
+  flex-flow: row nowrap; /* This element is now a row and does not wrap */
+  justify-content: flex-start; /* Put the elements at the start of the container (row) */
+  margin: 1em;
+}
+
+/** The footer element **/
+footer {
+  display: flex; /* This element is a container */
+  justify-content: center; /* Put child elements at the center of this container's main axis */
+  margin: 1em 0;
+  color: var(--light);
+  text-align: center;
+}
+
+/* The section element */
+section {
+  background-color: var(--light);
+  flex: 1; /* This element will now grow to fill it's container */
+  padding: 1em 2em;
+  border: 0.3em solid var(--borders); /* Create a border for this element */
+  border-radius: 0.5em; /*rounded corners */
+}
+
+/* The form element */
+form {
+  display: flex; /* This element is a container */
+  flex-flow: column nowrap; /* This element is now a column and does not wrap */
+}
+
+/****************************************
+Header Elements
+*****************************************/
+/** The first level heading anywhere on the page **/
+h1 {
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  font-size: 2em;
+  color: var(--borders);
+  padding-right: 1em; /* Pad the right side so h1 and h2 elements aren't up against the right side of their container.*/
+}
+
+/** Second level heading anywhere on the page **/
+h2 {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 1.4em;
+  color: var(--light);
+}
+
+/****************************************
+Nav Elements and Buttons
+*****************************************/
+/* Buttons and Links */
+nav a,
+nav a:visited,
+nav a:active,
+button {
+  border-radius: 0.5em; /*rounded corners */
+  background-color: var(--borders);
+  border: 0.3em solid var(--light);
+  color: var(--light);
+  text-align: center; /* Align the text to the center of its container's xd axis*/
+  text-decoration: none; /* remove the underline */
+}
+
+/** hover hyperlinks in the nav and hovering buttons **/
+nav a:hover,
+button:hover {
+  background-color: var(--light);
+  color: var(--borders);
+  border: 0.3em solid var(--borders);
+  border-radius: 0.5em; /*rounded corners */
+}
+
+/* Unordered lists that are children of nav elements */
+nav > ul {
+  display: flex; /* This element is a container */
+  flex-flow: column nowrap; /* This element is now a column and does not wrap */
+  padding-right: 1em;
+}
+
+/* list items that are descendants of unordered lists
+   when those unordered lists are descendaants of the nav element */
+nav ul li {
+  margin-bottom: 1em;
+}
+
+/* hyperlinks belonging to the list inside of the nav, and buttons */
+nav ul li a,
+button {
+  display: block; /* Treat this element as a block-level element */
+  padding: 1em;
+  text-align: center; /* Align text to the center of this element */
+  box-shadow: 5px 5px 20px #000; /* Add a box-shadow to the element */
+}
+
+/* Buttons anywhere on the page */
+button {
+  font-size: 1.2em;
+}
+
+/****************************************
+Form Elements
+*****************************************/
+/* Labels inside of the form and the legend inside of the form */
+form label,
+legend {
+  text-transform: uppercase; /* Make the text in the label and legend uppercase*/
+  font-size: 1em;
+  letter-spacing: 0.3em; /* Add some spacing between the characters */
+  padding: 0.5em 0em;
+}
+
+/*override the text styling for labels in the terms and conditions due to length*/
+#checkbox label {
+  letter-spacing: 0;
+  text-transform: initial;
+}
+
+/* Input elements inside of the form and select elements on the page */
+form input,
+select {
+  background: rgba(236, 217, 134, 0.25); /* A transparent gold-ish background */
+  outline: none; /* Remove the outline */
+  border-radius: 0.2em; /* Rounded corners*/
+  border: none; /* Remove the border*/
+  font-size: 0.9em;
+  color: var(--dark); /* Change the text color of these inputs */
+  padding: 1em;
+}
+
+/* Input elements inside of the form
+   Specifically checkboxes and radio buttons */
+form input[type="checkbox"],
+form input[type="radio"] {
+  margin-right: 1em; /* Add a margin so the label isnt right on top of it*/
+}
+
+/* Fieldset elements inside of the form and 
+   div elements that are direct descendants of the form */
+form fieldset,
+form > div {
+  display: flex; /* This element is a container (default: row) */
+  margin: 1em 0em;
+}
+
+/* fieldset elements inside of the form */
+form fieldset {
+  border-top: 0.3em solid var(--other); /* Apply a border to the top of the fieldset*/
+  border-bottom: 0.3em solid var(--other); /* Apply a border to the bottom of the fieldset*/
+}
+
+/* div elements that are descendants of the fieldset element */
+fieldset div {
+  padding: 1em 5em 1em 1em;
+}
+
+/* legend elements that are descendants of the fieldset */
+fieldset legend {
+  font-weight: bold;
+  padding: 0 0.5em;
+}
+
+/* divs that are direct descendants of the form */
+form > div {
+  flex-flow: column nowrap; /* This element is now a column and does not wrap */
+}
+
+/* The div that contains the terms and conditions checkbox and its label.
+   Selected using the (unique) id of the div */
+#checkbox {
+  flex-flow: row nowrap; /* This element is now a row and does not wrap */
+}
+
+/****************************************
+General Page Stuff
+*****************************************/
+/** hyperlinks not in the nav **/
+a {
+  color: var(--borders);
+}
+
+/** visted hyperlinks not in the nav **/
+a:visited {
+  color: var(--borders);
+}
+
+/** superscript elements anywhere on the page **/
+sup {
+  font-size: 50%;
+  vertical-align: top;
+}
+
+/*------------------------------------------------------------------------------
+|                               Error Styles for Lab 5
+|-----------------------------------------------------------------------------*/
+
+.error {
+  color: var(--borders);
+  display: block;
+  margin: 0.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+/*##################################################
+              Results Page Styles
+######################################################*/
+#results td {
+  padding: 0.5em 1em;
+}
+/* center the votes column */
+#results td:last-child {
+  text-align: center;
+}
+/* alternating row color */
+#results tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+#results tfoot {
+  border-top: 0.2em solid var(--borders);
+}
+
+#results thead {
+  border-bottom: 0.2em solid var(--borders);
+}
+/* total row */
+#results tfoot td {
+  padding-top: 1em;
+  color: #7d0000;
+  font-weight: bolder;
+}
+/* column headers */
+#results thead th {
+  padding: 0.2em;
+  padding-bottom: 0.5em;
+  text-align: left;
+  font-weight: bolder;
+}
+
+#tablewrap {
+  border: 0.2em solid var(--borders);
+  border-radius: 0.3em;
+  padding: 1em;
+  margin: auto;
+  width: 20em;
+  margin-bottom: 2em;
+}
+/* center table */
+#results {
+  margin: auto;
+}
